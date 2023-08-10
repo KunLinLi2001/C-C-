@@ -1,0 +1,59 @@
+# Project: 火车票订票系统
+# Makefile created by Dev-C++ 6.7
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = addtrain.o cloud.o main.o menu.o modifyman.o modifytrain.o preserve.o read.o searchtrain.o showman.o showtrain.o
+LINKOBJ  = addtrain.o cloud.o main.o menu.o modifyman.o modifytrain.o preserve.o read.o searchtrain.o showman.o showtrain.o
+LIBS     = -L"E:/Dev-Cpp/MinGW32/lib" -L"E:/Dev-Cpp/MinGW32/i686-w64-mingw32/lib" -g3 -static
+INCS     = -I"E:/Dev-Cpp/MinGW32/include" -I"E:/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"E:/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed"
+CXXINCS  = -I"E:/Dev-Cpp/MinGW32/include" -I"E:/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"E:/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"E:/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed" -I"E:/Dev-Cpp/MinGW32/include/c++/10.2.0" -I"E:/Dev-Cpp/MinGW32/include/c++/10.2.0/i686-w64-mingw32" -I"E:/Dev-Cpp/MinGW32/include/c++/10.2.0/backward"
+BIN      = 火车票订票系统.exe
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "$(BIN)" $(LIBS)
+
+addtrain.o: addtrain.c
+	$(CPP) -c addtrain.c -o addtrain.o $(CXXFLAGS) 
+
+cloud.o: cloud.c
+	$(CPP) -c cloud.c -o cloud.o $(CXXFLAGS) 
+
+main.o: main.c
+	$(CPP) -c main.c -o main.o $(CXXFLAGS) 
+
+menu.o: menu.c
+	$(CPP) -c menu.c -o menu.o $(CXXFLAGS) 
+
+modifyman.o: modifyman.c
+	$(CPP) -c modifyman.c -o modifyman.o $(CXXFLAGS) 
+
+modifytrain.o: modifytrain.c
+	$(CPP) -c modifytrain.c -o modifytrain.o $(CXXFLAGS) 
+
+preserve.o: preserve.c
+	$(CPP) -c preserve.c -o preserve.o $(CXXFLAGS) 
+
+read.o: read.c
+	$(CPP) -c read.c -o read.o $(CXXFLAGS) 
+
+searchtrain.o: searchtrain.c
+	$(CPP) -c searchtrain.c -o searchtrain.o $(CXXFLAGS) 
+
+showman.o: showman.c
+	$(CPP) -c showman.c -o showman.o $(CXXFLAGS) 
+
+showtrain.o: showtrain.c
+	$(CPP) -c showtrain.c -o showtrain.o $(CXXFLAGS) 
